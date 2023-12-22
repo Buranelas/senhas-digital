@@ -2,7 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron&display=swap');
 
 body {
-    background-color: lightgoldenrodyellow;
+    background-image: url('../images/Senhas.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     user-select: none;
     cursor: none;
     margin: 0;
@@ -11,37 +14,12 @@ body {
     touch-action: manipulation;
 }
 
-header {
-    height: 20vh;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#title {
-    color: darkgreen;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 200px;
-}
-
-p {
-    height: 0vh;
-    color: black;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 #senha {
-    height: 40vh;
+    height: 55vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 200px;
+    font-size: 220px;
     font-family: 'Orbitron', sans-serif;
 }
 

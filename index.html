@@ -7,11 +7,6 @@
     <link rel="stylesheet" href="Style/style.css">
 </head>
 <body>
-
-    <header>
-        <p id="title">PRIMATO</p>
-    </header>
-    <p id="fila">Fila Açougue</p>
     <main class="senha">
         <div class="senha">
             <h2 id="senha">Senha: 0</h2>
@@ -73,12 +68,12 @@
                         senhaAtual = 0;
                         ultSenha = 'O'
                         audio.play();
-                        document.getElementById('senha').style.color = 'red';
+                        document.getElementById('senha').style.color = 'yellow';
 
                         falarSenha(senhaAtual);
 
                         setTimeout(function() {
-                            document.getElementById('senha').style.color = 'black';
+                            document.getElementById('senha').style.color = 'white';
                             asteriscoPressionado = false; //Libera a tecla * após 
                         }, 1000);
                         mostrarSenha();
@@ -120,12 +115,12 @@
 
                 audio.play();
 
-                document.getElementById('senha').style.color = 'red';
+                document.getElementById('senha').style.color = 'yellow';
 
                 falarSenha(senhaAtual);
 
                 setTimeout(function() {
-                    document.getElementById('senha').style.color = 'black';
+                    document.getElementById('senha').style.color = 'white';
                     enterPressionado = false; // Libera a tecla Enter após o tempo de espera
                 }, 1000);
 
@@ -135,12 +130,12 @@
                 if (senhaAtual > 0) {
                     senhaAtual --;
                     audio.play();
-                    document.getElementById('senha').style.color = 'red';
+                    document.getElementById('senha').style.color = 'yellow';
 
                     falarSenha(senhaAtual);
 
                     setTimeout(function() {
-                        document.getElementById('senha').style.color = 'black';
+                        document.getElementById('senha').style.color = 'white';
                         menosPressionado = false; // Libera a tecla menos após o tempo de espera
                     }, 1000);
                 }
@@ -163,12 +158,12 @@
                 contadorAudio = 0;
                 audio.play();
 
-                document.getElementById('senha').style.color = 'red';
+                document.getElementById('senha').style.color = 'yellow';
 
                 falarSenha(senhaAtual);
 
                 setTimeout(function() {
-                    document.getElementById('senha').style.color = 'black';
+                    document.getElementById('senha').style.color = 'white';
                     pontoPressionado = false;// Libera a tecla . após o tempo de espera
                 }, 1000);
 
