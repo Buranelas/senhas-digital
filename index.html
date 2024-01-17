@@ -71,7 +71,7 @@
                         audio.play();
                         document.getElementById('senha').style.color = 'yellow';
 
-                        falarSenha(senhaAtual);
+                        //falarSenha(senhaAtual);
 
                         setTimeout(function() {
                             document.getElementById('senha').style.color = 'white';
@@ -118,7 +118,7 @@
 
                 document.getElementById('senha').style.color = 'yellow';
 
-                falarSenha(senhaAtual);
+                //falarSenha(senhaAtual);
 
                 setTimeout(function() {
                     document.getElementById('senha').style.color = 'white';
@@ -133,7 +133,7 @@
                     audio.play();
                     document.getElementById('senha').style.color = 'yellow';
 
-                    falarSenha(senhaAtual);
+                    //falarSenha(senhaAtual);
 
                     setTimeout(function() {
                         document.getElementById('senha').style.color = 'white';
@@ -161,7 +161,7 @@
 
                 document.getElementById('senha').style.color = 'yellow';
 
-                falarSenha(senhaAtual);
+                //falarSenha(senhaAtual);
 
                 setTimeout(function() {
                     document.getElementById('senha').style.color = 'white';
@@ -187,10 +187,10 @@
                 }
                 
                 //FUNÇÃO PARA FALAR A SENHA QUE SERA EXIBIDA
-                function falarSenha(senha){
-                    var mensagem = new SpeechSynthesisUtterance('Senha ' + senha);
-                    synth.speak(mensagem)
-                }
+                // function falarSenha(senha){
+                //     var mensagem = new SpeechSynthesisUtterance('Senha ' + senha);
+                //     synth.speak(mensagem)
+                // }
                 
                 // IMPEDIR ABERTURA DE MENU DE CONTEXTO COM CLIQUE DE BOTAO DIREITO DO MOUSE
                 document.addEventListener('contextmenu', function (event) {
