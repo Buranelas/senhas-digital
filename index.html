@@ -51,44 +51,40 @@
 
         // FUNÇÃO PARA ZERAR O CONTADOR DE SENHAS PRESSIONANDO * POR MAIS DE 10 SEGUNDOS
         window.addEventListener('keydown', function(e) {
-            if ((e.keyCode === 106 && !teclaPressinada) && !asteriscoPressionado) {
-                teclaPressinada = true;
+            if (e.keyCode === 106 && !asteriscoPressionado) {
                 asteriscoPressionado = true;
 
+                const tempoInicial = Date.now();
+
                 const intervalo = setInterval(function() {
-                    if (teclaPressinada) {
-                        tempoPressionado += 100;
-                    } else {
+                    const tempoAtual = Date.now();
+                    const tempoPressionado = tempoAtual - tempoInicial;
+
+                    if (!asteriscoPressionado || tempoPressionado >= 1000) {
                         clearInterval(intervalo);
-                        tempoPressionado = 0;
+
+                        if (tempoPressionado >= 1000) {
+                            senhaAtual = 0;
+                            ultSenha = 'O';
+                            audio.play();
+                            document.getElementById('senha').style.color = 'yellow';
+
+                            //falarSenha(senhaAtual);
+
+                            setTimeout(function() {
+                                document.getElementById('senha').style.color = 'white';
+                                asteriscoPressionado = false; // Libera a tecla * após 1 segundo
+                            }, 1000);
+                            mostrarSenha();
+                        }
                     }
                 }, 100);
-
-                setTimeout(function() {
-                    if (teclaPressinada && tempoPressionado >= 1000) {
-                        senhaAtual = 0;
-                        ultSenha = 'O'
-                        audio.play();
-                        document.getElementById('senha').style.color = 'yellow';
-
-                        //falarSenha(senhaAtual);
-
-                        setTimeout(function() {
-                            document.getElementById('senha').style.color = 'white';
-                            asteriscoPressionado = false; //Libera a tecla * após 
-                        }, 1000);
-                        mostrarSenha();
-                    }
-
-                    clearInterval(intervalo);
-                    tempoPressionado = 0;
-                }, 1000);
             }
         });
 
         window.addEventListener('keyup', function(e) {
             if (e.keyCode === 106) {
-                teclaPressinada = false;
+                asteriscoPressionado = false;
             }
         });
 
@@ -96,7 +92,7 @@
         window.addEventListener('keydown', function(e) {
             // CONSOLE LOG PARA VALIDAR TECLA PRESSIONADA
             console.log('Tecla pressionada:', e.key);
-            console.log('Sequência temporária:', sequenciaTemporaria);
+            console.log('Sequência temporária:', senhaAtual);
 
             // FUNÇÃO PARA SOMAR +1 NA SENHA CASO FOR PRESSIONADO ENTER OU +
             if ((e.key === 'Enter' || e.keyCode === 13 || e.keyCode === 107) && !enterPressionado) {
@@ -179,9 +175,9 @@
 
                 //FUNÇÃO PARA ATUALIZAR SENHA EM TELA
                 function mostrarSenha(){
-                    if(ultSenha === 'P'){
+                    if(ultSenha = 'P'){
                         vSenha.innerHTML = 'Senha: ' + parseInt(senhaAtual).toLocaleString('pt-BR', {minimumIntegerDigits: 3});
-                    }else if(ultSenha === 'O' && ultSenha > 0){
+                    }else if(ultSenha = 'O' && ultSenha > 0){
                         vSenha.innerHTML = 'Senha: ' + parseInt(senhaAtual).toLocaleString('pt-BR', {minimumIntegerDigits: 3});
                     }
                 }
