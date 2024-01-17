@@ -22,7 +22,7 @@
         // VARIAVEIS DE FALA E AUDIO
         const audio = new Audio('audio/AudioSenha.mp3');
         let contadorAudio = 0;
-        let synth = window.speechSynthesis;
+        var synth = window.speechSynthesis;
         // VARIAVEL PARA ASSUMIR SEQUENCIA DIGITADA
         let sequenciaTemporaria = '';
         // VARIAVEL PARA CONTROLAR O TEMPO QUE A TECLA FOI PRESSONADA
@@ -32,6 +32,7 @@
         let menosPressionado = false;
         let asteriscoPressionado = false;
         let pontoPressionado = false;
+        let teclaPressinada = false;
 
         if (!senhaAtual)
             senhaAtual = 0
@@ -178,9 +179,9 @@
 
                 //FUNÇÃO PARA ATUALIZAR SENHA EM TELA
                 function mostrarSenha(){
-                    if(ultSenha = 'P'){
+                    if(ultSenha === 'P'){
                         vSenha.innerHTML = 'Senha: ' + parseInt(senhaAtual).toLocaleString('pt-BR', {minimumIntegerDigits: 3});
-                    }else if(ultSenha = 'O' && ultSenha > 0){
+                    }else if(ultSenha === 'O' && ultSenha > 0){
                         vSenha.innerHTML = 'Senha: ' + parseInt(senhaAtual).toLocaleString('pt-BR', {minimumIntegerDigits: 3});
                     }
                 }
